@@ -16,11 +16,11 @@ const Nav = () => {
     
     return (
         <div>
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/articles">Articles</NavLink>
+            <NavLink activeClassName="selected" className="NavLink"  exact to="/">Home</NavLink>
+            <NavLink activeClassName="selected" className="NavLink" exact to="/articles">Articles</NavLink>
             {topics.map(({slug}) => {
                 let newSlug = slug.charAt(0).toUpperCase() + slug.slice(1)
-                return <NavLink key={newSlug} to={`/articles/topics/${newSlug}`}>{newSlug}</NavLink>
+                return <NavLink key={newSlug} activeClassName="selected" className="NavLink" exact to={`/articles/topics/${newSlug}`}>{newSlug}</NavLink>
             })}
         </div>
     )
