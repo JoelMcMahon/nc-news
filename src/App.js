@@ -4,6 +4,7 @@ import './App.css';
 import Header from './components/Header';
 import Home from './components/Home';
 import Nav from './components/Nav';
+import Articles from './components/Articles';
 
 function App() {
 
@@ -14,8 +15,14 @@ function App() {
      <Header />
      <Nav />
      <Switch>
-       <Route exact path="/">
+       <Route exact path="/Home">
          <Home articles={articles} setArticles={setArticles}/>
+       </Route>
+       <Route exact path="/articles">
+         <Articles  articles={articles} setArticles={setArticles}/>
+       </Route>
+       <Route exact path="/articles/topics/:topic">
+         <Articles  articles={articles} setArticles={setArticles}/>
        </Route>
      </Switch>
     </div>

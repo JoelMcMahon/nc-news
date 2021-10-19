@@ -3,14 +3,14 @@ import { getArticle } from '../utils/api'
 
 const ArticleBody = ({article_id}) => {
 
-    const [article, setArticle] = useState({})
+    const [article, setArticle] = useState('')
 
     useEffect(() => {
         getArticle(article_id).then((res) => {
-            setArticle(res)
+            setArticle(res.body)
         })
 
-    }, [])
+    }, [article_id])
 
     return (
         <div>

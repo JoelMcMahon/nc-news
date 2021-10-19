@@ -5,14 +5,16 @@ import { getArticles } from './utils/api'
 
 const Home = ({ articles, setArticles }) => {
 
-    const recentArticles = [...articles].slice(0, 3);
-
+    
     useEffect(() => {
         getArticles().then((res) => {
+            console.log(res)
             setArticles(res)
         })
-
+        
     }, [])
+    
+    const recentArticles = [...articles].slice(0, 3);
 
     return (
         <div>
