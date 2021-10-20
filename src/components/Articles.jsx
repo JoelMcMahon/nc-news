@@ -5,17 +5,14 @@ import { getArticles } from './utils/api'
 
 const Articles = ({articles, setArticles}) => {
 
-    const {topic, article_id} = useParams()
-
-    console.log(useParams())
+    const {topic} = useParams()
 
     useEffect(() => {
-        getArticles(topic, article_id).then((res) => {
+        getArticles(topic).then((res) => {
             setArticles(res)
         })
-    }, [topic, article_id])
+    }, [topic])
 
-    console.log(articles)
     return (
         <div>
             <ArticleCard articles={articles} setArticles={setArticles}/>

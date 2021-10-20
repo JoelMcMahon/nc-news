@@ -11,15 +11,15 @@ const ArticleCard = ({ articles }) => {
                 {articles.map((article) => {
                     return (
                         <>
-                            <Link to={`/articles/${article.article_id}`}>
-                                <li key={article.article_id}>
-                                    <p>{article.title}</p>
-                                    <p>{article.author}</p>
-                                    <p>{article.created_at}</p>
-                                    <p>{article.topic}</p>
-                                    <p>Votes {article.votes}</p>
-                                </li>
-                            </Link>
+                            <li key={article.article_id}>
+                                <Link to={`/articles/${article.article_id}`}>
+                                    <h2>{article.title}</h2>
+                                </Link>
+                                <h3>{article.author}</h3>
+                                <p>{article.created_at}</p>
+                                <p>{article.topic}</p>
+                                <p>Votes {article.votes}</p>
+                            </li>
                             <Dropdown>
                                 <ArticleBody article_id={article.article_id} />
                             </Dropdown>
