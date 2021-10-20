@@ -13,8 +13,10 @@ function App() {
 
   return (
     <div className="App">
+    <header>
      <Header />
-     <Nav />
+     <Nav className="nav_bar"/>
+     </header>
      <Switch>
        <Route exact path="/">
         <Redirect to="/Home" />

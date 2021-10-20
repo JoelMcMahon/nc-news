@@ -18,7 +18,7 @@ const Home = ({ articles, setArticles }) => {
 
     return (
         <div>
-            <h2>Home</h2>
+            <h2>Latest News</h2>
             <ul>
                 {recentArticles.map((article) => {
                     return (

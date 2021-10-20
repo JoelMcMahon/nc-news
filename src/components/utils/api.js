@@ -4,8 +4,9 @@ const ncNewsApi = axios.create({
     baseURL: 'https://nc-news-app-21.herokuapp.com/api'
 });
 
-export const getArticles = (topic) => {
-    return ncNewsApi.get('/articles', {params: {topic: topic}})
+export const getArticles = (topic, sort, order) => {
+    const sortOrder = (order ? 'DESC' : 'ASC')
+    return ncNewsApi.get('/articles', {params: {topic: topic, sort_by: sort, order: sortOrder}})
         .then((res) => {
             return res.data.articles
         })

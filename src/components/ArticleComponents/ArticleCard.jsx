@@ -1,12 +1,39 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Dropdown from '../utils/Dropdown'
 import ArticleBody from './ArticleBody'
 import { Link } from 'react-router-dom'
 
 const ArticleCard = ({ articles }) => {
 
+     const [sort, setSort] = useState('created_at')
+     const [order, setOrder] = useState(true)
+
+     const handleOnChange = (e) => {
+         setSort(e.target.value)
+     }
+
+     console.log(sort)
+
+     const handleOnClick = (e) => {
+        setOrder((currentOrder) => {
+            setOrder(!currentOrder)
+        })
+     }
+     console.log(order)
+
+   
+     
+
     return (
         <div>
+            <select onChange={handleOnChange}>
+                <option value="" selected="selected">Sort By</option>
+                <option value="created_at">Date</option>
+                <option value="comment_count">Number of Comments</option>
+                <option value="votes">Votes</option>
+            </select>
+            <button onClick={handleOnClick}>{order ? 'Down Arrow' : 'Up Arrow'}</button>
+            
             <ul>
                 {articles.map((article) => {
                     return (
