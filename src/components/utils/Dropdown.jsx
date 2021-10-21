@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { BsChevronCompactDown, BsChevronCompactUp } from 'react-icons/bs'
  
 
 const Dropdown = ({children}) => {
@@ -14,10 +15,10 @@ const toggleDropdown = () => {
         <div>
             {isDown && children}
             <button onClick={toggleDropdown}>
-                {isDown ? 'Hide' : 'Show Full Article'}
+                {isDown ? <BsChevronCompactUp /> : <BsChevronCompactDown />}
             </button>
         </div>
     )
-}
+} 
 
 export default Dropdown

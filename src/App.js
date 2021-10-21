@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="App">
     <header>
-     <Header />
+     <Header className="main_title"/>
      <Nav className="nav_bar"/>
      </header>
      <Switch>

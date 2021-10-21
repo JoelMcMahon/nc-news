@@ -14,7 +14,7 @@ const Home = ({ articles, setArticles }) => {
 
     }, [])
 
-    const recentArticles = [...articles].slice(0, 3);
+    const recentArticles = [...articles].slice(-3);
 
     return (
         <div>

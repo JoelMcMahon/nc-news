@@ -3,11 +3,12 @@ import {useParams, Link} from 'react-router-dom'
 import Dropdown from './utils/Dropdown' 
 import ArticleBody from './ArticleComponents/ArticleBody'
 import { getArticles } from './utils/api'
+import {BsSortDown, BsSortUpAlt} from 'react-icons/bs'
 
 const Articles = ({articles, setArticles}) => {
 
     const [sort, setSort] = useState('created_at')
-     const [order, setOrder] = useState(true)
+     const [order, setOrder] = useState(null)
 
      const handleOnChange = (e) => {
          setSort(e.target.value)
@@ -34,10 +35,10 @@ const Articles = ({articles, setArticles}) => {
         <div>
             <select onChange={handleOnChange}>
                 <option value="created_at">Date</option>
-                <option value="comment_count">Number of Comments</option>
+                <option value="comment_count">Comments</option>
                 <option value="votes">Votes</option>
             </select>
-            <button onClick={handleOnClick}>{order ? 'Down Arrow' : 'Up Arrow'}</button>
+            <button onClick={handleOnClick}>{order ? <BsSortDown /> : <BsSortUpAlt/>}</button>
             
             <ul>
                 {articles.map((article) => {
