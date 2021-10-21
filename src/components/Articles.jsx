@@ -38,7 +38,7 @@ const Articles = ({articles, setArticles}) => {
                 <option value="comment_count">Comments</option>
                 <option value="votes">Votes</option>
             </select>
-            <button onClick={handleOnClick}>{order ? <BsSortDown /> : <BsSortUpAlt/>}</button>
+            <button onClick={handleOnClick}>{order ? <BsSortUpAlt/>: <BsSortDown />}</button>
             
             <ul>
                 {articles.map((article) => {

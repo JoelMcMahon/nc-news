@@ -7,17 +7,19 @@ import Nav from './components/Nav';
 import Articles from './components/Articles';
 import SingleArticle from './components/ArticleComponents/SingleArticle';
 import LogInIndicator from './components/LogInIndicator';
+import Account from './components/Account';
 
 function App() {
 
   const [articles, setArticles] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [user, setUser] = useState({})
 
   return (
     <div className="App">
     <header>
      <Header className="main_title"/>
-     <LogInIndicator />
+     <LogInIndicator isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} setUser={setUser} user={user}/>
      <Nav className="nav_bar"/>
      </header>
      <Switch>
@@ -35,6 +37,9 @@ function App() {
        </Route>
        <Route exact path="/articles/:article_id">
          <SingleArticle />
+       </Route>
+       <Route exact path="/account">
+         <Account isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} setUser={setUser}/>
        </Route>
      </Switch>
     </div>
