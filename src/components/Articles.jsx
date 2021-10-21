@@ -8,7 +8,7 @@ import {BsSortDown, BsSortUpAlt} from 'react-icons/bs'
 const Articles = ({articles, setArticles}) => {
 
     const [sort, setSort] = useState('created_at')
-     const [order, setOrder] = useState(null)
+     const [order, setOrder] = useState(false)
 
      const handleOnChange = (e) => {
          setSort(e.target.value)

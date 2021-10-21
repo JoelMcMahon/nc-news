@@ -6,15 +6,18 @@ import Home from './components/Home';
 import Nav from './components/Nav';
 import Articles from './components/Articles';
 import SingleArticle from './components/ArticleComponents/SingleArticle';
+import LogInIndicator from './components/LogInIndicator';
 
 function App() {
 
   const [articles, setArticles] = useState([]);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
     <div className="App">
     <header>
      <Header className="main_title"/>
+     <LogInIndicator />
      <Nav className="nav_bar"/>
      </header>
      <Switch>
