@@ -6,7 +6,7 @@ import CommentDisplay from './CommentDisplay'
 
 
 
-const SingleArticle = () => {
+const SingleArticle = ({isLoggedIn, user}) => {
 
     const [selectedArticle, setSelectedArticle] = useState([])
 
@@ -14,7 +14,6 @@ const SingleArticle = () => {
 
     useEffect(() => {
         getArticle(article_id).then((res) => {
-            console.log(res)
             setSelectedArticle(res)
         })
     }, [article_id])
@@ -28,9 +27,9 @@ const SingleArticle = () => {
             <p>Comments {selectedArticle.comment_count}</p>
             <p>Votes {selectedArticle.votes}</p>
             <p>{selectedArticle.body}</p>
-            <button>Comments {selectedArticle.comment_count}</button>
-            <button>Votes {selectedArticle.votes}</button>
-            <CommentDisplay id="comment_display" article_id={article_id}/> 
+            <button>Votes {selectedArticle.votes}</button>            
+            <CommentDisplay id="comment_display" article_id={article_id} isLoggedIn={isLoggedIn} user={user}/> 
+
         </div>
     )
 }

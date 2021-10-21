@@ -1,7 +1,7 @@
 import React, {useState, useEffect } from 'react'
 import { getUsers } from './utils/api'
 
-const Account = ({isLoggedIn, setUser, setIsLoggedIn}) => {
+const Account = ({isLoggedIn, setIsLoggedIn, user, setUser}) => {
 
     const [username, setUsername] = useState('')
     const [userList, setUserList] = useState([])
@@ -58,7 +58,8 @@ useEffect(() => {
             <button disabled={!isValidUsername}>Log In</button>
             <p>{usernameMessage}</p>
         </form>
-       : null }
+       : 
+       <p>Welcome, {user}</p> }
         </div>
     )
 }

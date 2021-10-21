@@ -36,10 +36,10 @@ function App() {
          <Articles  articles={articles} setArticles={setArticles}/>
        </Route>
        <Route exact path="/articles/:article_id">
-         <SingleArticle />
+         <SingleArticle isLoggedIn={isLoggedIn} user={user}/>
        </Route>
        <Route exact path="/account">
-         <Account isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} setUser={setUser}/>
+         <Account isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} user={user} setUser={setUser}/>
        </Route>
      </Switch>
     </div>
@@ -50,7 +50,4 @@ export default App;
 
 
 
-//Tomorrow - last task was trying to create the singleArticle component - 
-//tried to rerender the articles component but cant seem to pass the params on the axios object or get them from useParams.
-// began making single article component but now also can't reuse ArticleCard component because it needs articles state to work - which would then need to be 'filtered' by article id -  but can't do this becasue of the above problem
-//ask how to pass multiple params through to the request or start making the singleArticle component from scratch.
+//Last task was trying to get the commentDisplay component to rerender after a comment had been posted. So far the comment is being posted and I've tried both including a get request within the onsubmit and resetting the commentbody state and including this in the dependencies of the ueseffet, neither seem to have the desired effect, which is only acheived when the page is refreshed or changed...
