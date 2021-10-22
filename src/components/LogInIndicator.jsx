@@ -10,7 +10,6 @@ const LogInIndicator = ({ isLoggedIn, setIsLoggedIn, user, setUser }) => {
         }
     }
 
-    console.log(user)
     return (
         <div>
             <Link to="/account">
