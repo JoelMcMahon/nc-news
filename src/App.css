@@ -5,8 +5,9 @@
 
 body {
   background-color: #ffffff;
-  background-image: linear-gradient(.25turn, #d9e0eb, #ffffff , #d9e0eb)}
-
+  background-image: linear-gradient(.25turn, #d9e0eb, #ffffff , #d9e0eb);
+  
+}
 li {
   background-color: #ffffff;
   background-image: linear-gradient(.25turn, #e5eaf1, #ffffff , #e5eaf1);
@@ -15,30 +16,43 @@ li {
 .App {
   text-align: left;
   /* background-color: red; */
-  margin-left: 10vw;
-  margin-right: 10vw;
+  
 }
+
+
+
 
 header {
+  margin-left: 10vw;
+  margin-right: 10vw;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-between;
 }
 
-.nav_bar {
+
+.nav_container {
+  display: flex;
   align-items: center;
+  justify-content: center;
+  border-top: 3px solid #FF9A00;
 }
 
 .NavLink {
+  color: #0A1195;
   text-decoration: none;
+  align-items: center;
+  border: 1;
 }
 
 .selected {
-  text-decoration: overline underline;
+  /* text-decoration:  underline; */
+  border-bottom: 3px solid rgb(17, 17, 136);
 }
 
 .NavLink:hover {
-  text-decoration: overline underline;
+  color: #FF9A00;
 }
 
 ul {

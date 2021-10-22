@@ -18,34 +18,39 @@ function App() {
 
   return (
     <div className="App">
-    <header>
-     <Header className="main_title"/>
-     <LogInIndicator isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} setUser={setUser} user={user}/>
-     <Nav className="nav_bar"/>
-     </header>
-     <Switch>
-       <Route exact path="/">
-        <Redirect to="/Home" />
-       </Route>
-       <Route exact path="/Home">
-         <Home articles={articles} setArticles={setArticles}/>
-       </Route>
-       <Route exact path="/articles">
-         <Articles  articles={articles} setArticles={setArticles}/>
-       </Route>
-       <Route exact path="/articles/topics/:topic">
-         <Articles  articles={articles} setArticles={setArticles}/>
-       </Route>
-       <Route exact path="/articles/:article_id">
-         <SingleArticle isLoggedIn={isLoggedIn} user={user}/>
-       </Route>
-       <Route exact path="/account">
-         <Account isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} user={user} setUser={setUser}/>
-       </Route>
-       <Route>
-         <Error />
-       </Route>
-     </Switch>
+      <div className="banner">
+      </div>
+      <header className="header_container">
+        <Header className="header_container__main_title" />
+        <LogInIndicator isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} setUser={setUser} user={user} />
+      </header>
+      <div className="nav_container">
+        <Nav className="nav_containener__nav_bar" />
+      </div>
+      <br/>
+      <Switch>
+        <Route exact path="/">
+          <Redirect to="/Home" />
+        </Route>
+        <Route exact path="/Home">
+          <Home articles={articles} setArticles={setArticles} />
+        </Route>
+        <Route exact path="/articles">
+          <Articles articles={articles} setArticles={setArticles} />
+        </Route>
+        <Route exact path="/articles/topics/:topic">
+          <Articles articles={articles} setArticles={setArticles} />
+        </Route>
+        <Route exact path="/articles/:article_id">
+          <SingleArticle isLoggedIn={isLoggedIn} user={user} />
+        </Route>
+        <Route exact path="/account">
+          <Account isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} user={user} setUser={setUser} />
+        </Route>
+        <Route>
+          <Error />
+        </Route>
+      </Switch>
     </div>
   );
 }
