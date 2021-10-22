@@ -5,10 +5,15 @@ const CommentDisplay = ({ article_id, isLoggedIn, user }) => {
 
     const [comments, setComments] = useState([])
     const [commentBody, setCommentBody] = useState("")
+    const [isError, setIsError] = useState(false)
 
     useEffect(() => {
+        setIsError(false)
         getComments(article_id).then((res) => {
             setComments(res)
+        })
+        .catch((err) => {
+            setIsError(true)
         })
     }, [article_id, commentBody])
 

@@ -8,6 +8,7 @@ import Articles from './components/Articles';
 import SingleArticle from './components/ArticleComponents/SingleArticle';
 import LogInIndicator from './components/LogInIndicator';
 import Account from './components/Account';
+import Error from './components/Error';
 
 function App() {
 
@@ -40,6 +41,9 @@ function App() {
        </Route>
        <Route exact path="/account">
          <Account isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} user={user} setUser={setUser}/>
+       </Route>
+       <Route>
+         <Error />
        </Route>
      </Switch>
     </div>
