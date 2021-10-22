@@ -15,12 +15,20 @@ const CommentDisplay = ({ article_id, isLoggedIn, user }) => {
 
     const handleOnSubmit = (e) => {
         e.preventDefault()
+        // setComments((currentComments) => {
+        //     const newCommentList = [...currentComments, ]
+        // })
         postComment(article_id, user, commentBody).then((res) => {
             console.log(res)
         })
         setCommentBody('');
         
     }
+
+
+    //Work out how to rerender the commentDisplay after a comment has been posted -
+    //Including commentBody state in dependency array of useEffect doesn't seem to work
+    //Possibly try to optimistically render the comment? Date could be a problem..
 
     
 
