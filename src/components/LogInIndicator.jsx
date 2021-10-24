@@ -14,7 +14,7 @@ const LogInIndicator = ({ isLoggedIn, setIsLoggedIn, user, setUser }) => {
         <div>
             <Link to="/account">
                 {isLoggedIn && `Welcome, ${user}!`} 
-                <button onClick={handleOnClick}>{isLoggedIn ? "Log Out" : "Log In"}</button>
+                <button className="header_container__login_button" onClick={handleOnClick}>{isLoggedIn ? "Log Out" : "Log In"}</button>
             </Link>
         </div>
     )

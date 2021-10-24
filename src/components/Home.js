@@ -32,19 +32,21 @@ const Home = ({ articles, setArticles }) => {
 
                     :
                     <>
-                        <h2>Latest News</h2>
+                        <h2 className="main__home_header">Latest News</h2>
                         <ul>
                             {recentArticles.map((article) => {
                                 return (
                                     <li key={article.article_id}>
-                                        <Link to={`/articles/${article.article_id}`}>
-                                            <h2>{article.title}</h2>
+                                        <Link className="main__article_title_link" to={`/articles/${article.article_id}`}>
+                                            <h2 className="main__article_title">{article.title}</h2>
                                         </Link>
-                                        <h3>{article.author}</h3>
-                                        <p>{article.created_at}</p>
-                                        <p>{article.topic}</p>
-                                        <p>Votes {article.votes}</p>
+                                        <h3 className="main__author_name">{article.author}</h3>
+                                        <Link className="main__topic_tag-link" to={`/articles/topics/${article.topic}`}>
+                                            <button className="main__topic_tag">{article.topic}</button>
+                                        </Link>
                                         <ArticleBody article_id={article.article_id} />
+                                        <p>{article.comment_count}</p>
+                                        <p classnName="main__vote_indicator">Votes {article.votes}</p>
                                     </li>
                                 )
                             })}
