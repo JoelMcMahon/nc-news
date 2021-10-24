@@ -1,29 +1,23 @@
-/* * {
-  margin: 0;
-  padding: 0;
-} */
+
+/* MEDIA QUERIES, SORT OUT BEM  */
 
 body {
   background-color: #ffffff;
   background-image: linear-gradient(.25turn, #d9e0eb, #ffffff , #d9e0eb);
-  
 }
 
 
 .App {
   text-align: left;
-  /* background-color: red; */
-  
 }
 
-button {
-  
+a {
+  text-decoration: none;
 }
 
 
 
 header {
-  /* background-image: linear-gradient(.5turn, #0A1195, #2648a8 , #0A1195); */
   background-color: #2A52BE;
   background-image: linear-gradient(.5turn, #2A52BE, #3055bb , #2A52BE);
   border-bottom: 3.5px solid #FF9A00;
@@ -47,7 +41,7 @@ header {
 .header_container__logo2 {
   padding: .1rem .75rem;
   background-image: linear-gradient(.5turn, #d0d5db, #ffffff , #d0d5db);
-  border-radius: 2.5px;
+  border-radius: 1px;
   color: #282c83;
 }
 
@@ -119,8 +113,21 @@ li {
   background-image: linear-gradient(.25turn, #e5eaf1, #ffffff , #e5eaf1);
 }
 
+.main__article_li {
+  margin: 1rem 0;
+  padding: 1rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  border: 2px solid #e0e4e9;
+  box-shadow: -1px 6px 13px -1px #d2d6dd;
+  -webkit-box-shadow: -1px 6px 13px -1px #d2d6dd;
+  -moz-box-shadow: -1px 6px 13px -1px #d2d6dd;
+}
+
 .main__article_title_link {
-  margin-bottom: .5rem;
+  margin-bottom: .25rem;
   color: #3b3b3b;
   text-decoration: none;
 }
@@ -131,12 +138,19 @@ li {
   margin-bottom: .5rem;
 }
 
+.main__article_tags {
+  display: flex;
+  align-items: center
+}
+
 .main__author_name {
+  margin: 0;
   display: inline;
   color: #2A52BE;
   font-family: 'Playfair Display', serif;
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: .9rem;
+  font-weight: 700;
+  vertical-align: middle;
 }
 
 .main__topic_tag {
@@ -148,9 +162,10 @@ li {
   border: none;
   border-radius: 0px 100px 100px 0px;
   text-transform: uppercase;
-  font-size: .75rem;
+  font-size: .5rem;
   font-weight: 900;
   text-decoration: none;
+  vertical-align: middle;
 }
 .main__topic_tag:hover {
   color: #FF9A00;
@@ -159,3 +174,25 @@ li {
 .main__topic_tag-link {
  text-decoration: none;
 }
+
+.main__article_interactions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+}
+
+.article_li__interaction_indicator {
+  margin: 0 1rem 0 0;
+  color: #0A1195;
+}
+.article_li__interaction_indicator:hover {
+  color: #FF9A00;
+}
+
+.article_li__interaction_icon {
+  margin: .1rem;
+  font-size: 1.5rem;
+  vertical-align: middle;
+}
+
+

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import ArticleBody from './ArticleComponents/ArticleBody';
 import { getArticles } from './utils/api'
 import { Link } from 'react-router-dom';
+import { MdOutlineModeComment, MdThumbUpOffAlt } from 'react-icons/md'
 
 
 const Home = ({ articles, setArticles }) => {
@@ -36,17 +37,25 @@ const Home = ({ articles, setArticles }) => {
                         <ul>
                             {recentArticles.map((article) => {
                                 return (
-                                    <li key={article.article_id}>
+                                    <li key={article.article_id} className="main__article_li">
                                         <Link className="main__article_title_link" to={`/articles/${article.article_id}`}>
                                             <h2 className="main__article_title">{article.title}</h2>
                                         </Link>
-                                        <h3 className="main__author_name">{article.author}</h3>
-                                        <Link className="main__topic_tag-link" to={`/articles/topics/${article.topic}`}>
-                                            <button className="main__topic_tag">{article.topic}</button>
-                                        </Link>
+                                        <div className="main__article_tags">
+                                            <h3 className="main__author_name">{article.author}</h3>
+                                            <Link className="main__topic_tag-link" to={`/articles/topics/${article.topic}`}>
+                                                <button className="main__topic_tag">{article.topic}</button>
+                                            </Link>
+                                        </div>
                                         <ArticleBody article_id={article.article_id} />
-                                        <p>{article.comment_count}</p>
-                                        <p classnName="main__vote_indicator">Votes {article.votes}</p>
+                                        <div className="main__article_interactions">
+                                            <Link to={`/articles/${article.article_id}`}>
+                                                <p className="article_li__interaction_indicator"><MdOutlineModeComment className="article_li__interaction_icon" />{article.comment_count}</p>
+                                            </Link>
+                                            <Link to={`/articles/${article.article_id}`}>
+                                                <p className="article_li__interaction_indicator"><MdThumbUpOffAlt className="article_li__interaction_icon"/>{article.votes}</p>
+                                            </Link>
+                                        </div>
                                     </li>
                                 )
                             })}

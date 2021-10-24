@@ -18,8 +18,6 @@ function App() {
 
   return (
     <div className="App">
-      <div className="banner">
-      </div>
       <header className="header_container">
         <Header className="header_container__main_title" />
         <LogInIndicator isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} setUser={setUser} user={user} />
