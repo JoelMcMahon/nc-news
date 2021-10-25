@@ -45,6 +45,14 @@ header {
   color: #282c83;
 }
 
+.header_container__user {
+  margin-right: 1rem;
+  color: #ffffff;
+}
+.header_container__user:hover {
+  color: #FF9A00;
+}
+
 .header_container__login_button {
   margin-right: 10vw;
   background-color: transparent;
@@ -259,7 +267,55 @@ li {
   margin-left: 1rem;
   display: flex;
   align-items: baseline;
-  
 }
 
+
+.main__form-container {
+  display: flex;
+  justify-content: center;
+  font-family: inherit;
+  font-size: .8rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: #0A1195;
+}
+.main__login-form {
+  padding: 1rem 0;
+  width: 45vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  border: 2px solid #e0e4e9;
+  box-shadow: -1px 6px 13px -1px #d2d6dd;
+  background-color: #ffffff;
+  
+ 
+}
+.main__username {
+  margin: .5rem;
+  border: 1px solid #e5e5ee;
+  border-radius: none;
+}
+.main__username-message {
+  text-align: center;
+  flex-basis: 100%;
+}
+.main__login-form-button {
+  padding: .25rem .5rem;
+  background-color: #2A52BE;
+  border: none;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: .8rem;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.main__login-form-button:hover {
+  color: #FF9A00;
+  cursor: pointer;
+}
 
