@@ -53,7 +53,7 @@ const Home = ({ articles, setArticles }) => {
                                                 <p className="main__interaction_indicator"><MdOutlineModeComment className="main__interaction_icon" />{article.comment_count}</p>
                                             </Link>
                                             <Link to={`/articles/${article.article_id}`}>
-                                                <p className="main__interaction_indicator"><MdThumbUpOffAlt className="main__interaction_icon"/>{article.votes}</p>
+                                                <p className="main__interaction_indicator"><MdThumbUpOffAlt className="main__interaction_icon" />{article.votes}</p>
                                             </Link>
                                         </div>
                                     </li>

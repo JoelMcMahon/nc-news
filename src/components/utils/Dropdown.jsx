@@ -12,9 +12,9 @@ const toggleDropdown = () => {
 }
 
     return (
-        <div>
+        <div className="main__dropdown_container">
             {isDown && children}
-            <button onClick={toggleDropdown}>
+            <button className="main__dropdown_arrow" onClick={toggleDropdown}>
                 {isDown ? <BsChevronCompactUp /> : <BsChevronCompactDown />}
             </button>
         </div>

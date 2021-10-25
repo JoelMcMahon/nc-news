@@ -4,6 +4,7 @@ import Dropdown from './utils/Dropdown'
 import ArticleBody from './ArticleComponents/ArticleBody'
 import { getArticles } from './utils/api'
 import { BsSortDown, BsSortUpAlt } from 'react-icons/bs'
+import { MdOutlineModeComment, MdThumbUpOffAlt } from 'react-icons/md'
 
 const Articles = ({ articles, setArticles }) => {
 
@@ -61,19 +62,29 @@ const Articles = ({ articles, setArticles }) => {
                             {articles.map((article) => {
                                 return (
                                     <>
-                                        <li key={article.article_id}>
-                                            <Link to={`/articles/${article.article_id}`}>
-                                                <h2>{article.title}</h2>
+                                        <li key={article.article_id} className="main__article_li">
+                                            <Link className="main__article_title_link" to={`/articles/${article.article_id}`}>
+                                                <h2 className="main__article_title">{article.title}</h2>
                                             </Link>
-                                            <h3>{article.author}</h3>
-                                            <p>{article.created_at}</p>
-                                            <p>{article.topic}</p>
-                                            <p>Votes {article.votes}</p>
-                                            <p>Comments {article.comment_count}</p>
+                                            <div className="main__article_tags">
+                                                <h3 className="main__author_name">{article.author}</h3>
+                                                <Link className="main__topic_tag-link" to={`/articles/topics/${article.topic}`}>
+                                                    <button className="main__topic_tag">{article.topic}</button>
+                                                </Link>
+                                                <p className="main__date">{article.created_at.slice(0, 10)}</p>
+                                                <div className="main__article_interactions--dropdown">
+                                                    <Link to={`/articles/${article.article_id}`}>
+                                                        <p className="main__interaction_indicator"><MdOutlineModeComment className="main__interaction_icon" />{article.comment_count}</p>
+                                                    </Link>
+                                                    <Link to={`/articles/${article.article_id}`}>
+                                                        <p className="main__interaction_indicator"><MdThumbUpOffAlt className="main__interaction_icon" />{article.votes}</p>
+                                                    </Link>
+                                                </div>
+                                            </div>
+                                            <Dropdown>
+                                                <ArticleBody article_id={article.article_id} />
+                                            </Dropdown>
                                         </li>
-                                        <Dropdown>
-                                            <ArticleBody article_id={article.article_id} />
-                                        </Dropdown>
                                     </>
                                 )
                             })}

@@ -176,6 +176,15 @@ li {
  text-decoration: none;
 }
 
+.main__date {
+  margin: 0;
+  color: #686868;
+  font-family: inherit;
+  font-size: .8rem;
+  font-weight: 700;
+  vertical-align: middle;
+}
+
 .main__article_interactions {
   display: flex;
   justify-content: flex-end;
@@ -227,6 +236,30 @@ li {
 .main__sort_order:hover {
   color: #FF9A00;
   cursor: pointer;
+}
+
+.main__dropdown_container {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.main__dropdown_arrow {
+  background-color: transparent;
+  color: #71739c;
+  border: none;
+  font-size: 2rem;
+}
+.main__dropdown_arrow:hover {
+  color: #adb0e0;
+  cursor: pointer;
+}
+.main__article_interactions--dropdown {
+  margin-left: 1rem;
+  display: flex;
+  align-items: baseline;
+  
 }
 
 
