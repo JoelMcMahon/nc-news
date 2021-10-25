@@ -35,6 +35,7 @@ const Articles = ({ articles, setArticles }) => {
             })
     }, [topic, sort, order])
 
+    let subheader = (topic ? `${topic}` : 'All Articles')
 
 
     return (
@@ -47,7 +48,7 @@ const Articles = ({ articles, setArticles }) => {
 
                     :
                     <>
-
+                        <h2 className="main__subheader">{subheader}</h2>
                         <select onChange={handleOnChange}>
                             <option value="created_at">Date</option>
                             <option value="comment_count">Comments</option>

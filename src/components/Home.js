@@ -33,7 +33,7 @@ const Home = ({ articles, setArticles }) => {
 
                     :
                     <>
-                        <h2 className="main__home_header">Latest News</h2>
+                        <h2 className="main__subheader">Latest News</h2>
                         <ul>
                             {recentArticles.map((article) => {
                                 return (
@@ -50,10 +50,10 @@ const Home = ({ articles, setArticles }) => {
                                         <ArticleBody article_id={article.article_id} />
                                         <div className="main__article_interactions">
                                             <Link to={`/articles/${article.article_id}`}>
-                                                <p className="article_li__interaction_indicator"><MdOutlineModeComment className="article_li__interaction_icon" />{article.comment_count}</p>
+                                                <p className="main__interaction_indicator"><MdOutlineModeComment className="main__interaction_icon" />{article.comment_count}</p>
                                             </Link>
                                             <Link to={`/articles/${article.article_id}`}>
-                                                <p className="article_li__interaction_indicator"><MdThumbUpOffAlt className="article_li__interaction_icon"/>{article.votes}</p>
+                                                <p className="main__interaction_indicator"><MdThumbUpOffAlt className="main__interaction_icon"/>{article.votes}</p>
                                             </Link>
                                         </div>
                                     </li>

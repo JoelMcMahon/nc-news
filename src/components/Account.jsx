@@ -28,7 +28,7 @@ useEffect(() => {
        
        if(exists) {
            setIsValidUsername(true)
-           setUsernameMessage('Bingo!') 
+           setUsernameMessage('Username found') 
 
        } else {
            setIsValidUsername(false)
@@ -48,7 +48,7 @@ useEffect(() => {
         <form onSubmit={handleSubmit}>
             <label htmlFor="username">Username:</label>
             <input 
-            placeholder="New User? try cooljmessy"
+            placeholder="Try cooljmessy"
             id="username" 
             type="text" 
             value={username}

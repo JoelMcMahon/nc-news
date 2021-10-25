@@ -92,11 +92,12 @@ header {
 
 
 
+
 .main {
   margin: 0 10vw;
 }
 
-.main__home_header {
+.main__subheader {
   text-transform: uppercase;
   color: #0A1195;
   font-weight: 900;
@@ -181,15 +182,15 @@ li {
   align-items: baseline;
 }
 
-.article_li__interaction_indicator {
+.main__interaction_indicator {
   margin: 0 1rem 0 0;
   color: #0A1195;
 }
-.article_li__interaction_indicator:hover {
+.main__interaction_indicator:hover {
   color: #FF9A00;
 }
 
-.article_li__interaction_icon {
+.main__interaction_icon {
   margin: .1rem;
   font-size: 1.5rem;
   vertical-align: middle;
