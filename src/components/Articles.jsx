@@ -49,13 +49,14 @@ const Articles = ({ articles, setArticles }) => {
                     :
                     <>
                         <h2 className="main__subheader">{subheader}</h2>
-                        <select onChange={handleOnChange}>
-                            <option value="created_at">Date</option>
-                            <option value="comment_count">Comments</option>
-                            <option value="votes">Votes</option>
-                        </select>
-                        <button onClick={handleOnClick}>{order ? <BsSortUpAlt /> : <BsSortDown />}</button>
-
+                        <div className="main__sort_container">
+                            <select className="main__sort_by" onChange={handleOnChange}>
+                                <option value="created_at">Date</option>
+                                <option value="comment_count">Comments</option>
+                                <option value="votes">Votes</option>
+                            </select>
+                            <button class="main__sort_order" onClick={handleOnClick}>{order ? <BsSortUpAlt /> : <BsSortDown />}</button>
+                        </div>
                         <ul>
                             {articles.map((article) => {
                                 return (

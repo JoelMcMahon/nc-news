@@ -197,3 +197,36 @@ li {
 }
 
 
+
+.main__sort_container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.main__sort_by {
+  padding: 0;
+  background-color: #ffffff;
+  color: #0A1195;
+  border: none;
+  font-family: inherit;
+  text-transform: uppercase;
+  font-weight: 900;
+  text-align: center;
+  cursor: pointer;
+}
+.main__sort_order {
+  margin-left: .5rem;
+  background-color: transparent;
+  color: #0A1195;
+  border: none;
+  font-weight: 900;
+  font-size: 1.2rem;
+  vertical-align: middle;
+}
+.main__sort_order:hover {
+  color: #FF9A00;
+  cursor: pointer;
+}
+
+
