@@ -11,9 +11,9 @@ NC News 21 Backend Repository - https://github.com/JoelMcMahon/be-nc-news
 
 ## General Info ##
 
-The site is designed to make CRUD requests to the API and enable users to interact with the data stored in its relational database. 
+The site is designed to make requests to the API and enable users to interact with the data stored in its relational database. 
 
-It features a number of articles, comments, topics and other data such as votes and allows users to engage with the site’s content and other users via adding comments and voting on articles. 
+It features a number of articles, comments, topics and other data such as votes, and allows users to engage with the site’s content and other users via adding comments and voting on articles. 
 
 ## Technologies ##
 
