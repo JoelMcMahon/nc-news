@@ -1,26 +1,30 @@
-import { Redirect, Route, Switch } from 'react-router';
-import { useState } from 'react';
-import './App.css';
-import Header from './components/Header';
-import Home from './components/Home';
-import Nav from './components/Nav';
-import Articles from './components/Articles';
-import SingleArticle from './components/ArticleComponents/SingleArticle';
-import LogInIndicator from './components/LogInIndicator';
-import Account from './components/Account';
-import Error from './components/Error';
+import { Redirect, Route, Switch } from "react-router";
+import { useState } from "react";
+import "./App.css";
+import Header from "./components/Header";
+import Home from "./components/Home";
+import Nav from "./components/Nav";
+import Articles from "./components/Articles";
+import SingleArticle from "./components/ArticleComponents/SingleArticle";
+import LogInIndicator from "./components/LogInIndicator";
+import Account from "./components/Account";
+import Error from "./components/Error";
 
 function App() {
-
   const [articles, setArticles] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [user, setUser] = useState({})
+  const [user, setUser] = useState({});
 
   return (
     <div className="App">
       <header className="header_container">
         <Header className="header_container__main_title" />
-        <LogInIndicator isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} setUser={setUser} user={user} />
+        <LogInIndicator
+          isLoggedIn={isLoggedIn}
+          setIsLoggedIn={setIsLoggedIn}
+          setUser={setUser}
+          user={user}
+        />
       </header>
       <div className="nav_container">
         <Nav className="nav_containener__nav_bar" />
@@ -43,7 +47,12 @@ function App() {
             <SingleArticle isLoggedIn={isLoggedIn} user={user} />
           </Route>
           <Route exact path="/account">
-            <Account isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} user={user} setUser={setUser} />
+            <Account
+              isLoggedIn={isLoggedIn}
+              setIsLoggedIn={setIsLoggedIn}
+              user={user}
+              setUser={setUser}
+            />
           </Route>
           <Route>
             <Error />
@@ -55,7 +64,5 @@ function App() {
 }
 
 export default App;
-
-
 
 //Last task was trying to get the commentDisplay component to rerender after a comment had been posted. So far the comment is being posted and I've tried both including a get request within the onsubmit and resetting the commentbody state and including this in the dependencies of the ueseffet, neither seem to have the desired effect, which is only acheived when the page is refreshed or changed...
