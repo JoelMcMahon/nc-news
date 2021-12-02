@@ -1,11 +1,9 @@
-
 /* MEDIA QUERIES, SORT OUT BEM  */
 
 body {
   background-color: #ffffff;
-  background-image: linear-gradient(.25turn, #d9e0eb, #ffffff , #d9e0eb);
+  background-image: linear-gradient(0.25turn, #d9e0eb, #ffffff, #d9e0eb);
 }
-
 
 .App {
   text-align: left;
@@ -15,12 +13,10 @@ a {
   text-decoration: none;
 }
 
-
-
 header {
-  background-color: #2A52BE;
-  background-image: linear-gradient(.5turn, #2A52BE, #3055bb , #2A52BE);
-  border-bottom: 3.5px solid #FF9A00;
+  background-color: #2a52be;
+  background-image: linear-gradient(0.5turn, #2a52be, #3055bb, #2a52be);
+  border-bottom: 3.5px solid #ff9a00;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -39,8 +35,8 @@ header {
 }
 
 .header_container__logo2 {
-  padding: .1rem .75rem;
-  background-image: linear-gradient(.5turn, #d0d5db, #ffffff , #d0d5db);
+  padding: 0.1rem 0.75rem;
+  background-image: linear-gradient(0.5turn, #d0d5db, #ffffff, #d0d5db);
   border-radius: 1px;
   color: #282c83;
 }
@@ -50,7 +46,7 @@ header {
   color: #ffffff;
 }
 .header_container__user:hover {
-  color: #FF9A00;
+  color: #ff9a00;
 }
 
 .header_container__login_button {
@@ -60,31 +56,32 @@ header {
   border: none;
   cursor: pointer;
   text-transform: uppercase;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
   -webkit-font-smoothing: antialiased;
-  font-size: .8rem;
+  font-size: 0.8rem;
   font-weight: 900;
 }
 
 .header_container__login_button:hover {
-  color: #FF9A00;
+  color: #ff9a00;
 }
 
-
 .nav_container {
-  margin-top: .25rem;
+  margin-top: 0.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .NavLink {
-  padding: 0 .25rem;
-  color: #0A1195;
+  padding: 0 0.25rem;
+  color: #0a1195;
   text-decoration: none;
   align-items: center;
   text-transform: uppercase;
-  font-size: .8rem;
+  font-size: 0.8rem;
   font-weight: 900;
 }
 
@@ -93,13 +90,9 @@ header {
 }
 
 .NavLink:hover {
-  color: #FF9A00;
-  border-bottom: 3px solid #FF9A00;
+  color: #ff9a00;
+  border-bottom: 3px solid #ff9a00;
 }
-
-
-
-
 
 .main {
   margin: 0 10vw;
@@ -107,11 +100,9 @@ header {
 
 .main__subheader {
   text-transform: uppercase;
-  color: #0A1195;
+  color: #0a1195;
   font-weight: 900;
 }
-
-
 
 ul {
   list-style-type: none;
@@ -119,7 +110,7 @@ ul {
 
 li {
   background-color: #ffffff;
-  background-image: linear-gradient(.25turn, #e5eaf1, #ffffff , #e5eaf1);
+  background-image: linear-gradient(0.25turn, #e5eaf1, #ffffff, #e5eaf1);
 }
 
 .main__article_li {
@@ -136,7 +127,7 @@ li {
 }
 
 .main__article_title_link {
-  margin-bottom: .25rem;
+  margin-bottom: 0.25rem;
   color: #3b3b3b;
   text-decoration: none;
 }
@@ -144,51 +135,51 @@ li {
   color: #686868;
 }
 .main__article_title {
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 .main__article_tags {
   display: flex;
-  align-items: center
+  align-items: center;
 }
 
 .main__author_name {
   margin: 0;
   display: inline;
-  color: #2A52BE;
-  font-family: 'Playfair Display', serif;
-  font-size: .9rem;
+  color: #2a52be;
+  font-family: "Playfair Display", serif;
+  font-size: 0.9rem;
   font-weight: 700;
   vertical-align: middle;
 }
 
 .main__topic_tag {
   display: inline;
-  padding: .15rem .6rem .15rem .4rem;
+  padding: 0.15rem 0.6rem 0.15rem 0.4rem;
   margin: 0 1rem;
   color: #ffffff;
-  background-color: #0A1195;
+  background-color: #0a1195;
   border: none;
   border-radius: 0px 100px 100px 0px;
   text-transform: uppercase;
-  font-size: .5rem;
+  font-size: 0.5rem;
   font-weight: 900;
   text-decoration: none;
   vertical-align: middle;
 }
 .main__topic_tag:hover {
-  color: #FF9A00;
+  color: #ff9a00;
   cursor: pointer;
 }
 .main__topic_tag-link {
- text-decoration: none;
+  text-decoration: none;
 }
 
 .main__date {
   margin: 0;
   color: #686868;
   font-family: inherit;
-  font-size: .8rem;
+  font-size: 0.8rem;
   font-weight: 700;
   vertical-align: middle;
 }
@@ -201,19 +192,27 @@ li {
 
 .main__interaction_indicator {
   margin: 0 1rem 0 0;
-  color: #0A1195;
+  color: #0a1195;
 }
 .main__interaction_indicator:hover {
-  color: #FF9A00;
+  color: #ff9a00;
 }
 
 .main__interaction_icon {
-  margin: .1rem;
+  margin: 0.1rem;
   font-size: 1.5rem;
   vertical-align: middle;
+  border: none;
 }
-
-
+.main__interaction_icon:hover {
+  cursor: pointer;
+  color: #ff9a00;
+}
+.main__interaction_button {
+  color: #0a1195;
+  background: transparent;
+  border: none;
+}
 
 .main__sort_container {
   display: flex;
@@ -224,7 +223,7 @@ li {
 .main__sort_by {
   padding: 0;
   background-color: #ffffff;
-  color: #0A1195;
+  color: #0a1195;
   border: none;
   font-family: inherit;
   text-transform: uppercase;
@@ -233,16 +232,16 @@ li {
   cursor: pointer;
 }
 .main__sort_order {
-  margin-left: .5rem;
+  margin-left: 0.5rem;
   background-color: transparent;
-  color: #0A1195;
+  color: #0a1195;
   border: none;
   font-weight: 900;
   font-size: 1.2rem;
   vertical-align: middle;
 }
 .main__sort_order:hover {
-  color: #FF9A00;
+  color: #ff9a00;
   cursor: pointer;
 }
 
@@ -269,15 +268,25 @@ li {
   align-items: baseline;
 }
 
+.main__singleArticle_title {
+  font-size: 2.5rem;
+  margin-bottom: 0.25rem;
+  color: #3b3b3b;
+  text-decoration: none;
+}
+.main__singleArticle_body {
+  line-height: 2rem;
+  font-size: 1rem;
+}
 
 .main__form-container {
   display: flex;
   justify-content: center;
   font-family: inherit;
-  font-size: .8rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
   font-weight: 900;
-  color: #0A1195;
+  color: #0a1195;
 }
 .main__login-form {
   padding: 1rem 0;
@@ -291,11 +300,9 @@ li {
   border: 2px solid #e0e4e9;
   box-shadow: -1px 6px 13px -1px #d2d6dd;
   background-color: #ffffff;
-  
- 
 }
 .main__username {
-  margin: .5rem;
+  margin: 0.5rem;
   border: 1px solid #e5e5ee;
   border-radius: none;
 }
@@ -304,18 +311,17 @@ li {
   flex-basis: 100%;
 }
 .main__login-form-button {
-  padding: .25rem .5rem;
-  background-color: #2A52BE;
+  padding: 0.25rem 0.5rem;
+  background-color: #2a52be;
   border: none;
   color: #ffffff;
   font-family: inherit;
-  font-size: .8rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
   font-weight: 900;
 }
 
 .main__login-form-button:hover {
-  color: #FF9A00;
+  color: #ff9a00;
   cursor: pointer;
 }
-
