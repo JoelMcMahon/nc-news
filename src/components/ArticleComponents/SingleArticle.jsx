@@ -3,12 +3,12 @@ import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { addVotes, getArticle } from "../utils/api";
 import CommentDisplay from "./CommentDisplay";
-import { BiUpvote, BiDownvote } from "react-icons/bi";
 import {
   MdOutlineModeComment,
   MdThumbUpOffAlt,
   MdThumbDownOffAlt,
 } from "react-icons/md";
+import { HashLink } from "react-router-hash-link";
 
 const SingleArticle = ({ isLoggedIn, user }) => {
   const [selectedArticle, setSelectedArticle] = useState([]);
@@ -54,12 +54,12 @@ const SingleArticle = ({ isLoggedIn, user }) => {
             </Link>
             <p className="main__date">{selectedArticle.created_at}</p>
             <div className="main__article_interactions--dropdown">
-              <Link to={`/articles/${selectedArticle.article_id}`}>
+              <HashLink to="comment_display">
                 <p className="main__interaction_indicator">
                   <MdOutlineModeComment className="main__interaction_icon" />
                   {selectedArticle.comment_count}
                 </p>
-              </Link>
+              </HashLink>
               <Link to={`/articles/${selectedArticle.article_id}`}>
                 <p className="main__interaction_indicator">
                   <MdThumbUpOffAlt className="main__interaction_icon" />
