@@ -54,18 +54,17 @@ const SingleArticle = ({ isLoggedIn, user }) => {
             </Link>
             <p className="main__date">{selectedArticle.created_at}</p>
             <div className="main__article_interactions--dropdown">
-              <HashLink to="comment_display">
+              <HashLink smooth to={`${selectedArticle.article_id}#comments`}>
                 <p className="main__interaction_indicator">
                   <MdOutlineModeComment className="main__interaction_icon" />
                   {selectedArticle.comment_count}
                 </p>
               </HashLink>
-              <Link to={`/articles/${selectedArticle.article_id}`}>
-                <p className="main__interaction_indicator">
-                  <MdThumbUpOffAlt className="main__interaction_icon" />
-                  {selectedArticle.votes + voteChange}
-                </p>
-              </Link>
+
+              <p className="main__interaction_indicator noHover">
+                <MdThumbUpOffAlt className="main__interaction_icon" />
+                {selectedArticle.votes + voteChange}
+              </p>
             </div>
           </div>
           <p className="main__singleArticle_body">{selectedArticle.body}</p>
@@ -89,12 +88,14 @@ const SingleArticle = ({ isLoggedIn, user }) => {
             </div>
           )}
 
-          <CommentDisplay
-            id="comment_display"
-            article_id={article_id}
-            isLoggedIn={isLoggedIn}
-            user={user}
-          />
+          <section id="comments">
+            <CommentDisplay
+              id="comments"
+              article_id={article_id}
+              isLoggedIn={isLoggedIn}
+              user={user}
+            />
+          </section>
         </>
       )}
     </div>

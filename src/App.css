@@ -141,6 +141,7 @@ li {
 .main__article_tags {
   display: flex;
   align-items: center;
+  margin-top: 2rem;
 }
 
 .main__author_name {
@@ -207,6 +208,9 @@ li {
 .main__interaction_icon:hover {
   cursor: pointer;
   color: #ff9a00;
+}
+.noHover {
+  pointer-events: none;
 }
 .main__interaction_button {
   color: #0a1195;
@@ -277,6 +281,7 @@ li {
 .main__singleArticle_body {
   line-height: 2rem;
   font-size: 1rem;
+  margin-bottom: 2rem;
 }
 
 .main__form-container {
