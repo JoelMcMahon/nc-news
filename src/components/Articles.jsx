@@ -15,9 +15,6 @@ const Articles = ({ articles, setArticles }) => {
     setSort(e.target.value);
   };
 
-  console.log(typeof handleOnChange);
-  console.log(typeof sort);
-
   const handleOnClick = (e) => {
     setOrder((currentOrder) => {
       setOrder(!currentOrder);
@@ -38,9 +35,6 @@ const Articles = ({ articles, setArticles }) => {
   }, [topic, sort, order]);
 
   let subheader = topic ? `${topic}` : "All Articles";
-
-  console.log(typeof subheader);
-  console.log(typeof topic);
 
   return (
     <div>
