@@ -38,13 +38,13 @@ const CommentDisplay = ({ article_id, isLoggedIn, user }) => {
 
   return (
     <div>
-      <h2>Comments ({comments.length})</h2>
+      <h2 className="main__comments_title">Comments ({comments.length})</h2>
       {isLoggedIn && (
-        <form onSubmit={handleOnSubmit}>
-          <label htmlFor="commentBody">Comment as {user}:</label>
+        <form className="main__comments_form" onSubmit={handleOnSubmit}>
+          <label htmlFor="commentBody">Comment as {user}: </label>
           <input
             type="text"
-            size="20"
+            size="30"
             required
             value={commentBody}
             onChange={handleOnChange}

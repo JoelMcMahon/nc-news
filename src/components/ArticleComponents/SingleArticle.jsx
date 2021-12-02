@@ -70,7 +70,7 @@ const SingleArticle = ({ isLoggedIn, user }) => {
           <p className="main__singleArticle_body">{selectedArticle.body}</p>
 
           {isLoggedIn && (
-            <div>
+            <div className="main__singleArticle_voteContainer">
               <button
                 onClick={incVote}
                 value="upvote"
@@ -88,9 +88,10 @@ const SingleArticle = ({ isLoggedIn, user }) => {
             </div>
           )}
 
+          <hr className="main__singleArticle_lineBreak"></hr>
+
           <section id="comments">
             <CommentDisplay
-              id="comments"
               article_id={article_id}
               isLoggedIn={isLoggedIn}
               user={user}

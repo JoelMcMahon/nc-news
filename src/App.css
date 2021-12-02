@@ -141,7 +141,6 @@ li {
 .main__article_tags {
   display: flex;
   align-items: center;
-  margin-top: 2rem;
 }
 
 .main__author_name {
@@ -274,14 +273,36 @@ li {
 
 .main__singleArticle_title {
   font-size: 2.5rem;
-  margin-bottom: 0.25rem;
+  margin-bottom: 1rem;
   color: #3b3b3b;
   text-decoration: none;
 }
 .main__singleArticle_body {
   line-height: 2rem;
   font-size: 1rem;
-  margin-bottom: 2rem;
+  color: #3b3b3b;
+}
+.main__singleArticle_voteContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+.main__singleArticle_lineBreak {
+  height: 0.2rem;
+  background-color: #3055bb;
+  border: none;
+  margin: 2rem 0 2rem 0;
+}
+
+.main__comments_title {
+  color: #3b3b3b;
+}
+.main__comments_form {
+  font-weight: 500;
+  color: #3b3b3b;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding: 3rem;
 }
 
 .main__form-container {
