@@ -42,14 +42,16 @@ const CommentDisplay = ({ article_id, isLoggedIn, user }) => {
       {isLoggedIn && (
         <form className="main__comments_form" onSubmit={handleOnSubmit}>
           <label htmlFor="commentBody">Comment as {user}: </label>
-          <input
+          <textarea
+            id="commentBody"
+            className="main__comments_text-input"
+            rows="5"
             type="text"
-            size="30"
             required
             value={commentBody}
             onChange={handleOnChange}
           />
-          <button>Post Comment</button>
+          <button className="main__comments_button">Post Comment</button>
         </form>
       )}
 
