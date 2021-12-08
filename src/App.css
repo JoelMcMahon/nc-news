@@ -309,6 +309,10 @@ li {
   font-family: inherit;
   margin: 1rem 0 1rem 1.5rem;
   padding: 0.8rem;
+  border: 2px solid #e0e4e9;
+  box-shadow: -1px 6px 13px -1px #d2d6dd;
+  -webkit-box-shadow: -1px 6px 13px -1px #d2d6dd;
+  -moz-box-shadow: -1px 6px 13px -1px #d2d6dd;
 }
 .main__comments_button {
   padding: 0.25rem 0.5rem;
@@ -331,6 +335,7 @@ li {
   font-weight: 800;
   color: #2a52be;
 }
+
 .main__comments_date {
   color: #686868;
   font-size: 0.8rem;

@@ -16,22 +16,20 @@ const CommentDisplay = ({ article_id, isLoggedIn, user }) => {
       .catch((err) => {
         setIsError(true);
       });
-  }, [article_id, commentBody]);
+  }, [article_id]);
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    // setComments((currentComments) => {
-    //     const newCommentList = [...currentComments, ]
-    // })
-    postComment(article_id, user, commentBody).then((res) => {
-      console.log(res);
-    });
+    const optimisticComment = {
+      author: user,
+      body: commentBody,
+      created_at: new Date().toISOString(),
+      votes: 0,
+    };
+    setComments((currentComments) => [optimisticComment, ...currentComments]);
+    postComment(article_id, user, commentBody).then((res) => {});
     setCommentBody("");
   };
-
-  //Work out how to rerender the commentDisplay after a comment has been posted -
-  //Including commentBody state in dependency array of useEffect doesn't seem to work
-  //Possibly try to optimistically render the comment? Date could be a problem..
 
   const handleOnChange = (e) => {
     setCommentBody(e.target.value);
@@ -42,7 +40,10 @@ const CommentDisplay = ({ article_id, isLoggedIn, user }) => {
       <h2 className="main__comments_title">Comments ({comments.length})</h2>
       {isLoggedIn && (
         <form className="main__comments_form" onSubmit={handleOnSubmit}>
-          <label htmlFor="commentBody">Comment as {user}: </label>
+          <label htmlFor="commentBody">
+            Comment as{" "}
+            <span className="main__comments_author-name">{user}</span>:{" "}
+          </label>
           <textarea
             id="commentBody"
             className="main__comments_text-input"
