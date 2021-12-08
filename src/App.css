@@ -307,7 +307,8 @@ li {
 .main__comments_text-input {
   font-size: 1rem;
   font-family: inherit;
-  margin: 1rem 0 1rem 0;
+  margin: 1rem 0 1rem 1.5rem;
+  padding: 0.8rem;
 }
 .main__comments_button {
   padding: 0.25rem 0.5rem;
@@ -324,6 +325,29 @@ li {
 .main__comments_button:hover {
   color: #ff9a00;
   cursor: pointer;
+}
+.main__comments_author-name {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #2a52be;
+}
+.main__comments_date {
+  color: #686868;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+.main__comments_comment-li {
+  margin-bottom: 2rem;
+  padding: 1rem 1.5rem;
+  border: 2px solid #e0e4e9;
+  box-shadow: -1px 6px 13px -1px #d2d6dd;
+  -webkit-box-shadow: -1px 6px 13px -1px #d2d6dd;
+  -moz-box-shadow: -1px 6px 13px -1px #d2d6dd;
+}
+.main__comments_comment-body {
+  line-height: 2rem;
+  font-size: 1rem;
+  color: #3b3b3b;
 }
 
 .main__form-container {

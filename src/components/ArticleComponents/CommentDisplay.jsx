@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { postComment, getComments } from "../utils/api";
+import { MdThumbUpOffAlt, MdThumbDownOffAlt } from "react-icons/md";
 
 const CommentDisplay = ({ article_id, isLoggedIn, user }) => {
   const [comments, setComments] = useState([]);
@@ -58,11 +59,32 @@ const CommentDisplay = ({ article_id, isLoggedIn, user }) => {
       <ul>
         {comments.map((comment) => {
           return (
-            <li>
-              <h3>{comment.author}</h3>
-              <p>{comment.created_at.slice(0, 10)}</p>
-              <p>{comment.body}</p>
-              <button>Votes {comment.votes}</button>
+            <li className="main__comments_comment-li">
+              <h3 className="main__comments_author-name">{comment.author}</h3>
+              <p className="main__comments_date">
+                {comment.created_at.slice(0, 10)}
+              </p>
+              <p className="main__comments_comment-body">{comment.body}</p>
+
+              {isLoggedIn && (
+                <div className="main__singleArticle_voteContainer">
+                  <button
+                    // onClick={incVote}
+                    // value="upvote"
+                    className="main__interaction_button"
+                  >
+                    <MdThumbUpOffAlt className="main__interaction_icon" />
+                  </button>
+                  <p className="main__comments_author-name">{comment.votes}</p>
+                  <button
+                    // onClick={incVote}
+                    // value="downvote"
+                    className="main__interaction_button"
+                  >
+                    <MdThumbDownOffAlt className="main__interaction_icon" />
+                  </button>
+                </div>
+              )}
             </li>
           );
         })}
