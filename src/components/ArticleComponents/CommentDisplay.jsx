@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { postComment, getComments } from "../utils/api";
 import { MdThumbUpOffAlt, MdThumbDownOffAlt } from "react-icons/md";
+import Loader from "../Loader";
 
 const CommentDisplay = ({ article_id, isLoggedIn, user }) => {
   const [comments, setComments] = useState([]);
   const [commentBody, setCommentBody] = useState("");
   const [isError, setIsError] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     setIsError(false);
     getComments(article_id)
       .then((res) => {
         setComments(res);
+        setIsLoading(false);
       })
       .catch((err) => {
         setIsError(true);
@@ -34,6 +37,8 @@ const CommentDisplay = ({ article_id, isLoggedIn, user }) => {
   const handleOnChange = (e) => {
     setCommentBody(e.target.value);
   };
+
+  if (isLoading) return <Loader></Loader>;
 
   return (
     <div>

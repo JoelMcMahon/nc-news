@@ -9,11 +9,13 @@ import {
   MdThumbDownOffAlt,
 } from "react-icons/md";
 import { HashLink } from "react-router-hash-link";
+import Loader from "../Loader";
 
 const SingleArticle = ({ isLoggedIn, user }) => {
   const [selectedArticle, setSelectedArticle] = useState([]);
   const [voteChange, setVoteChange] = useState(0);
   const [isError, setIsError] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   const { article_id } = useParams();
 
@@ -22,6 +24,7 @@ const SingleArticle = ({ isLoggedIn, user }) => {
     getArticle(article_id)
       .then((res) => {
         setSelectedArticle(res);
+        setIsLoading(false);
       })
       .catch((err) => {
         setIsError(true);
@@ -33,7 +36,8 @@ const SingleArticle = ({ isLoggedIn, user }) => {
     setVoteChange((currVoteChange) => currVoteChange + num);
     addVotes(article_id, num);
   };
-  console.log(voteChange);
+
+  if (isLoading) return <Loader></Loader>;
 
   return (
     <div>
