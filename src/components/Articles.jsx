@@ -5,11 +5,13 @@ import ArticleBody from "./ArticleComponents/ArticleBody";
 import { getArticles } from "./utils/api";
 import { BsSortDown, BsSortUpAlt } from "react-icons/bs";
 import { MdOutlineModeComment, MdThumbUpOffAlt } from "react-icons/md";
+import Loader from "./Loader";
 
 const Articles = ({ articles, setArticles }) => {
   const [sort, setSort] = useState("created_at");
   const [order, setOrder] = useState(false);
   const [isError, setIsError] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   const handleOnChange = (e) => {
     setSort(e.target.value);
@@ -25,9 +27,11 @@ const Articles = ({ articles, setArticles }) => {
 
   useEffect(() => {
     setIsError(false);
+    setIsLoading(true);
     getArticles(topic, sort, order)
       .then((res) => {
         setArticles(res);
+        setIsLoading(false);
       })
       .catch((err) => {
         setIsError(true);
@@ -35,6 +39,8 @@ const Articles = ({ articles, setArticles }) => {
   }, [topic, sort, order]);
 
   let subheader = topic ? `${topic}` : "All Articles";
+
+  if (isLoading) return <Loader></Loader>;
 
   return (
     <div>
