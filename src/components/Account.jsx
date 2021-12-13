@@ -11,7 +11,7 @@ const Account = ({ isLoggedIn, setIsLoggedIn, user, setUser }) => {
     e.preventDefault();
     setIsLoggedIn(true);
     setUser(username);
-    console.log(username);
+    localStorage.setItem("user", username);
   };
 
   const handleOnChange = (e) => {

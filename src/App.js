@@ -1,5 +1,5 @@
 import { Redirect, Route, Switch } from "react-router";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import Home from "./components/Home";
@@ -14,6 +14,14 @@ function App() {
   const [articles, setArticles] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState({});
+
+  useEffect(() => {
+    const loggedInUser = localStorage.getItem("user");
+    if (loggedInUser) {
+      setUser(loggedInUser);
+      setIsLoggedIn(true);
+    }
+  }, []);
 
   return (
     <div className="App">
