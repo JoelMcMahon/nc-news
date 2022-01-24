@@ -3,10 +3,12 @@
 body {
   background-color: #ffffff;
   background-image: linear-gradient(0.25turn, #d9e0eb, #ffffff, #d9e0eb);
+  font-size: 1em;
 }
 
 .App {
   text-align: left;
+  /* font-size: 4em; */
 }
 
 a {
@@ -106,6 +108,7 @@ header {
 
 ul {
   list-style-type: none;
+  padding: 0;
 }
 
 li {
@@ -312,7 +315,6 @@ li {
 }
 .main__singleArticle_body {
   line-height: 2rem;
-  font-size: 1rem;
   color: #3b3b3b;
 }
 .main__singleArticle_voteContainer {
@@ -433,4 +435,32 @@ li {
 .main__login-form-button:hover {
   color: #ff9a00;
   cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+  .App {
+    font-size: 0.75em;
+  }
+  .NavLink {
+    font-size: 0.5rem;
+  }
+  .main__article_li {
+    padding: 0.5rem;
+  }
+  .main__topic_tag {
+    font-size: 0.4rem;
+  }
+  .main__article_tags,
+  .main__article_interactions,
+  .main__interaction_icon,
+  .main__author_name,
+  .main__date {
+    font-size: inherit;
+  }
+  .main__singleArticle_title {
+    font-size: 1.4rem;
+  }
+  .main__date {
+    font-size: 0.5rem;
+  }
 }
