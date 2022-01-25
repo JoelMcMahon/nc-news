@@ -58,7 +58,7 @@ const Articles = ({ articles, setArticles }) => {
               <option value="comment_count">Comments</option>
               <option value="votes">Votes</option>
             </select>
-            <button class="main__sort_order" onClick={handleOnClick}>
+            <button className="main__sort_order" onClick={handleOnClick}>
               {order ? <BsSortUpAlt /> : <BsSortDown />}
             </button>
           </div>

@@ -37,6 +37,11 @@ const SingleArticle = ({ isLoggedIn, user }) => {
     addVotes(article_id, num);
   };
 
+  const dateAndTime = new Date(selectedArticle.created_at)
+    .toString()
+    .slice(0, 16);
+  console.log(dateAndTime);
+
   if (isLoading) return <Loader></Loader>;
 
   return (
@@ -56,7 +61,7 @@ const SingleArticle = ({ isLoggedIn, user }) => {
                 {selectedArticle.topic}
               </button>
             </Link>
-            <p className="main__date">{selectedArticle.created_at}</p>
+            <p className="main__date">{dateAndTime}</p>
             <div className="main__article_interactions--dropdown">
               <HashLink smooth to={`${selectedArticle.article_id}#comments`}>
                 <p className="main__interaction_indicator">
