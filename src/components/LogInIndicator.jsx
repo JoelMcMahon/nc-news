@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { RiLogoutBoxRLine } from "react-icons/ri";
 
 const LogInIndicator = ({ isLoggedIn, setIsLoggedIn, user, setUser }) => {
   const handleOnClick = (e) => {
@@ -22,6 +23,14 @@ const LogInIndicator = ({ isLoggedIn, setIsLoggedIn, user, setUser }) => {
         >
           {isLoggedIn ? "Log Out" : "Log In"}
         </button>
+        {!isLoggedIn && (
+          <button
+            className="header_container__login_indicator"
+            onClick={handleOnClick}
+          >
+            <RiLogoutBoxRLine />
+          </button>
+        )}
       </Link>
     </div>
   );

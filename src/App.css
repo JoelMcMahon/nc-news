@@ -104,6 +104,10 @@ header {
   text-transform: uppercase;
   color: #0a1195;
   font-weight: 900;
+  font-size: 1.8rem;
+}
+.main__mobile_subheader {
+  display: none;
 }
 
 ul {
@@ -443,6 +447,20 @@ li {
   }
   .NavLink {
     font-size: 0.5rem;
+  }
+
+  .main__subheader {
+    display: none;
+  }
+  .main__mobile_subheader {
+    display: inline-flex;
+    font-size: 1.2rem;
+    margin-right: auto;
+  }
+  .main__sort_by {
+    justify-self: flex-end;
+    max-width: 5rem;
+    margin-left: 1rem;
   }
   .main__article_li {
     padding: 0.5rem;

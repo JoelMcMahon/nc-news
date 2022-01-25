@@ -50,6 +50,9 @@ const Articles = ({ articles, setArticles }) => {
         <>
           <h2 className="main__subheader">{subheader}</h2>
           <div className="main__sort_container">
+            <h2 className="main__subheader main__mobile_subheader">
+              {subheader}
+            </h2>
             <select className="main__sort_by" onChange={handleOnChange}>
               <option value="created_at">Date</option>
               <option value="comment_count">Comments</option>
