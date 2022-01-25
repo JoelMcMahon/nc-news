@@ -40,7 +40,6 @@ const SingleArticle = ({ isLoggedIn, user }) => {
   const dateAndTime = new Date(selectedArticle.created_at)
     .toString()
     .slice(0, 16);
-  console.log(dateAndTime);
 
   if (isLoading) return <Loader></Loader>;
 

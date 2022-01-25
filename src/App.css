@@ -451,7 +451,7 @@ li {
   cursor: pointer;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 498px) {
   .App {
     font-size: 0.75em;
   }
@@ -484,11 +484,17 @@ li {
   .main__topic_tag {
     font-size: 0.4rem;
   }
-  .main__article_tags,
-  .main__article_interactions,
   .main__interaction_icon,
+  .main__comments_title {
+    font-size: 1.2rem;
+  }
+  .main__article_tags,
   .main__author_name,
-  .main__date {
+  .main__date,
+  .main__comments_author-name,
+  .main__comments_text-input,
+  .main__comments_date,
+  .main__comments_comment-body {
     font-size: inherit;
   }
   .main__singleArticle_title {
@@ -497,4 +503,17 @@ li {
   .main__date {
     font-size: 0.5rem;
   }
+  .main__singleArticle_body,
+  .main__comments_comment-body {
+    line-height: 1.5rem;
+  }
+  .main__comments_text-input {
+    margin-left: 0;
+  }
+  .main__comments_button {
+    font-size: 0.7rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
 }
