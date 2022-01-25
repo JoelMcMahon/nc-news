@@ -70,6 +70,16 @@ header {
   color: #ff9a00;
 }
 
+.header_container__login_icon {
+  display: none;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 1.3rem;
+  vertical-align: middle;
+  margin-right: 1rem;
+}
+
 .nav_container {
   margin-top: 0.25rem;
   display: flex;
@@ -444,6 +454,12 @@ li {
 @media screen and (max-width: 480px) {
   .App {
     font-size: 0.75em;
+  }
+  .header_container__login_button {
+    display: none;
+  }
+  .header_container__login_icon {
+    display: inline;
   }
   .NavLink {
     font-size: 0.5rem;
