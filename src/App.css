@@ -494,7 +494,8 @@ li {
   .main__comments_author-name,
   .main__comments_text-input,
   .main__comments_date,
-  .main__comments_comment-body {
+  .main__comments_comment-body,
+  .main__form-container {
     font-size: inherit;
   }
   .main__singleArticle_title {
@@ -510,10 +511,18 @@ li {
   .main__comments_text-input {
     margin-left: 0;
   }
-  .main__comments_button {
+  .main__comments_button,
+  .main__login-form-button {
     font-size: 0.7rem;
+  }
+  .main__login-form {
+    min-width: 225px;
+    max-width: 229px;
+    margin-top: 1rem;
   }
 }
 
 @media screen and (max-width: 768px) {
 }
+
+/* max-width at largest should be 1280 for all elements */
