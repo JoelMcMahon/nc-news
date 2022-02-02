@@ -38,34 +38,36 @@ function App() {
         <Nav className="nav_containener__nav_bar" />
       </div>
       <main className="main">
-        <Switch>
-          <Route exact path="/">
-            <Redirect to="/Home" />
-          </Route>
-          <Route exact path="/Home">
-            <Home articles={articles} setArticles={setArticles} />
-          </Route>
-          <Route exact path="/articles">
-            <Articles articles={articles} setArticles={setArticles} />
-          </Route>
-          <Route exact path="/articles/topics/:topic">
-            <Articles articles={articles} setArticles={setArticles} />
-          </Route>
-          <Route exact path="/articles/:article_id">
-            <SingleArticle isLoggedIn={isLoggedIn} user={user} />
-          </Route>
-          <Route exact path="/account">
-            <Account
-              isLoggedIn={isLoggedIn}
-              setIsLoggedIn={setIsLoggedIn}
-              user={user}
-              setUser={setUser}
-            />
-          </Route>
-          <Route>
-            <Error />
-          </Route>
-        </Switch>
+        <div className="main__container">
+          <Switch>
+            <Route exact path="/">
+              <Redirect to="/Home" />
+            </Route>
+            <Route exact path="/Home">
+              <Home articles={articles} setArticles={setArticles} />
+            </Route>
+            <Route exact path="/articles">
+              <Articles articles={articles} setArticles={setArticles} />
+            </Route>
+            <Route exact path="/articles/topics/:topic">
+              <Articles articles={articles} setArticles={setArticles} />
+            </Route>
+            <Route exact path="/articles/:article_id">
+              <SingleArticle isLoggedIn={isLoggedIn} user={user} />
+            </Route>
+            <Route exact path="/account">
+              <Account
+                isLoggedIn={isLoggedIn}
+                setIsLoggedIn={setIsLoggedIn}
+                user={user}
+                setUser={setUser}
+              />
+            </Route>
+            <Route>
+              <Error />
+            </Route>
+          </Switch>
+        </div>
       </main>
     </div>
   );

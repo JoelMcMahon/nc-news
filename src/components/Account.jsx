@@ -38,7 +38,7 @@ const Account = ({ isLoggedIn, setIsLoggedIn, user, setUser }) => {
   }, []);
 
   return (
-    <div>
+    <div className="main__account-container">
       <h2 className="main__subheader">Account</h2>
 
       {!isLoggedIn ? (
