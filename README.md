@@ -3,7 +3,7 @@
 
 NC News 21 is a social news aggregation site serviced by its own dedicated API.
 
-NC News 21 - https://ncnews21.netlify.app/Home
+NC News 21 - https://ncnews21.netlify.app
 
 NC News 21 API - https://nc-news-app-21.herokuapp.com/api
 
