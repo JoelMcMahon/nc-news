@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { addVotes, getArticle } from "../utils/api";
+import { addVotes, getArticle, getArticleLikes } from "../utils/api";
 import CommentDisplay from "./CommentDisplay";
 import {
   MdOutlineModeComment,
@@ -16,6 +16,7 @@ const SingleArticle = ({ isLoggedIn, user }) => {
   const [voteChange, setVoteChange] = useState(0);
   const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [likeStatus, setLikeStatus] = useState(0);
 
   const { article_id } = useParams();
 
@@ -30,6 +31,10 @@ const SingleArticle = ({ isLoggedIn, user }) => {
         setIsError(true);
       });
   }, [article_id]);
+
+  useEffect(() => {
+    getArticleLikes(article_id);
+  });
 
   const incVote = (e) => {
     let num = e.currentTarget.value === "upvote" ? 1 : -1;
@@ -83,6 +88,7 @@ const SingleArticle = ({ isLoggedIn, user }) => {
                 onClick={incVote}
                 value="upvote"
                 className="main__interaction_button"
+                // disabled={true}
               >
                 <MdThumbUpOffAlt className="main__interaction_icon" />
               </button>
