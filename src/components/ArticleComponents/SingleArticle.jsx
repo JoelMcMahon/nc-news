@@ -33,8 +33,18 @@ const SingleArticle = ({ isLoggedIn, user }) => {
   }, [article_id]);
 
   useEffect(() => {
-    getArticleLikes(article_id);
-  });
+    getArticleLikes(article_id).then((res) => {
+      // console.log(Object.values(res).includes(user));
+      // console.log(Object.values(res[0]));
+      // console.log(user);
+      if (Object.values(res[0]).includes(user)) {
+        setLikeStatus(res[0].like_status);
+        console.log(likeStatus);
+      }
+    });
+  }, []);
+
+  console.log(likeStatus, "<<<Outside");
 
   const incVote = (e) => {
     let num = e.currentTarget.value === "upvote" ? 1 : -1;
