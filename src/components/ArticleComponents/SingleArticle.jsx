@@ -1,7 +1,13 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { addVotes, getArticle, getArticleLikes } from "../utils/api";
+import {
+  addVotes,
+  getArticle,
+  getArticleLikes,
+  addLike,
+  deleteLike,
+} from "../utils/api";
 import CommentDisplay from "./CommentDisplay";
 import {
   MdOutlineModeComment,
@@ -16,7 +22,7 @@ const SingleArticle = ({ isLoggedIn, user }) => {
   const [voteChange, setVoteChange] = useState(0);
   const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [likeStatus, setLikeStatus] = useState(0);
+  const [likeStatus, setLikeStatus] = useState(null);
 
   const { article_id } = useParams();
 
@@ -34,22 +40,48 @@ const SingleArticle = ({ isLoggedIn, user }) => {
 
   useEffect(() => {
     getArticleLikes(article_id).then((res) => {
-      // console.log(Object.values(res).includes(user));
-      // console.log(Object.values(res[0]));
-      // console.log(user);
-      if (Object.values(res[0]).includes(user)) {
-        setLikeStatus(res[0].like_status);
-        console.log(likeStatus);
+      if (res[0]) {
+        if (Object.values(res[0]).includes(user)) {
+          setLikeStatus(res[0].like_status);
+        }
+      } else {
+        setLikeStatus(0);
       }
     });
   }, []);
 
-  console.log(likeStatus, "<<<Outside");
+  console.log(likeStatus);
+  console.log(article_id, "ARTICLE ID");
 
   const incVote = (e) => {
     let num = e.currentTarget.value === "upvote" ? 1 : -1;
     setVoteChange((currVoteChange) => currVoteChange + num);
     addVotes(article_id, num);
+    if (e.currentTarget.value === "upvote") {
+      if (likeStatus === 0) {
+        addLike(article_id, user, num).then((res) => {
+          console.log(res, "<<<<<<<<< RES IN COMPONENT");
+          setLikeStatus(res);
+        });
+      } else if (likeStatus === -1) {
+        deleteLike(article_id, user).then(() => {
+          setLikeStatus(0);
+        });
+      }
+    }
+
+    if (e.currentTarget.value === "downvote") {
+      if (likeStatus === 0) {
+        addLike(article_id, num).then((res) => {
+          console.log(res, "DOWNVOTE RES IN COMPONENT");
+          setLikeStatus(res);
+        });
+      } else if (likeStatus === 1) {
+        deleteLike(article_id, user).then(() => {
+          setLikeStatus(0);
+        });
+      }
+    }
   };
 
   const dateAndTime = new Date(selectedArticle.created_at)
@@ -97,15 +129,24 @@ const SingleArticle = ({ isLoggedIn, user }) => {
               <button
                 onClick={incVote}
                 value="upvote"
-                className="main__interaction_button"
-                // disabled={true}
+                className={
+                  likeStatus === 1
+                    ? "main__interaction_button-selected"
+                    : "main__interaction_button"
+                }
+                disabled={likeStatus === 1 ? true : false}
               >
                 <MdThumbUpOffAlt className="main__interaction_icon" />
               </button>
               <button
                 onClick={incVote}
                 value="downvote"
-                className="main__interaction_button"
+                className={
+                  likeStatus === -1
+                    ? "main__interaction_button-selected"
+                    : "main__interaction_button"
+                }
+                disabled={likeStatus === -1 ? true : false}
               >
                 <MdThumbDownOffAlt className="main__interaction_icon" />
               </button>

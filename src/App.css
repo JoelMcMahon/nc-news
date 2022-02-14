@@ -274,6 +274,11 @@ li {
   background: transparent;
   border: none;
 }
+.main__interaction_button-selected {
+  color: #ff9a00;
+  background: transparent;
+  border: none;
+}
 
 .main__sort_container {
   display: flex;

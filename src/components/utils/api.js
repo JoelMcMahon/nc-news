@@ -69,3 +69,25 @@ export const getArticleLikes = (article_id) => {
     return res.data.likes;
   });
 };
+
+export const addLike = (article_id, user, num) => {
+  return ncNewsApi
+    .post(`/articles/${article_id}/likes`, { username: user, like_status: num })
+    .then((res) => {
+      return res.data.likes[0].like_status;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+export const deleteLike = (article_id, user) => {
+  return ncNewsApi
+    .delete(`/articles/${article_id}/likes`, { username: user })
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};

@@ -36,6 +36,7 @@ const Account = ({ isLoggedIn, setIsLoggedIn, user, setUser }) => {
       setUserList(res);
     });
   }, []);
+  console.log(userList[0]);
 
   return (
     <div className="main__account-container">
@@ -66,6 +67,7 @@ const Account = ({ isLoggedIn, setIsLoggedIn, user, setUser }) => {
       ) : (
         <div className="main__form-container">
           <p className="main__username-message">Welcome, {user}!</p>
+          {/* <img src={userList[user].avatar_url} alt="User Profile"></img> */}
         </div>
       )}
     </div>
