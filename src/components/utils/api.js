@@ -91,3 +91,7 @@ export const deleteLike = (article_id, user) => {
       console.log(err);
     });
 };
+
+export const deleteComment = (commentId) => {
+  return ncNewsApi.delete(`comments/${commentId}`);
+};

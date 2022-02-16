@@ -48,7 +48,7 @@ const SingleArticle = ({ isLoggedIn, user }) => {
         setLikeStatus(0);
       }
     });
-  }, []);
+  });
 
   console.log(likeStatus);
   console.log(article_id, "ARTICLE ID");
@@ -72,7 +72,7 @@ const SingleArticle = ({ isLoggedIn, user }) => {
 
     if (e.currentTarget.value === "downvote") {
       if (likeStatus === 0) {
-        addLike(article_id, num).then((res) => {
+        addLike(article_id, user, num).then((res) => {
           console.log(res, "DOWNVOTE RES IN COMPONENT");
           setLikeStatus(res);
         });

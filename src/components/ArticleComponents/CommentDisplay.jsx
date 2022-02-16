@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { postComment, getComments } from "../utils/api";
+import { postComment, getComments, deleteComment } from "../utils/api";
 import { MdThumbUpOffAlt, MdThumbDownOffAlt } from "react-icons/md";
 import Loader from "../Loader";
 
@@ -36,6 +36,16 @@ const CommentDisplay = ({ article_id, isLoggedIn, user }) => {
 
   const handleOnChange = (e) => {
     setCommentBody(e.target.value);
+  };
+
+  const handleDeleteComment = (e) => {
+    console.log(e.target.value);
+    setComments((currentComments) => [
+      ...currentComments.filter(
+        (comment) => comment.comment_id !== e.target.value
+      ),
+    ]); //WORK OUT HOW TO MAKE THIS FILTER WORK - SUSPECT ITS NOT WORKING
+    deleteComment(e.target.value);
   };
 
   if (isLoading) return <Loader></Loader>;
@@ -89,6 +99,14 @@ const CommentDisplay = ({ article_id, isLoggedIn, user }) => {
                   >
                     <MdThumbDownOffAlt className="main__interaction_icon" />
                   </button>
+                  {comment.author === user && (
+                    <button
+                      onClick={handleDeleteComment}
+                      value={comment.comment_id}
+                    >
+                      Delete Comment
+                    </button>
+                  )}
                 </div>
               )}
             </li>
